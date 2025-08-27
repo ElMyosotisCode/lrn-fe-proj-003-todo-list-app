@@ -1,0 +1,113 @@
+/*
+Notes:
+-- Unit Conversion --
+---------------------
+* 1 rem --> 16 px | * 1 rem --> 12 pt
+
+-- CSS Styling Order System --
+------------------------------
+I use my own custom CSS Architecture for prioritizing maintainability,
+which I named it 'FoCoMUR' styling system
+* 1.Fo - Foundation  : Reset, Variables, Base Elements
+    (e.g., :root, body, h1, etc.)
+* 2.Co - Component   : BEM Blocks/Elements
+    (e.g., .navbar, .card__image, etc.)
+* 3.M - Modifier     : State/theme Overrides
+    (e.g., .button--is-active, .image--is-hidden, etc.)
+* 4.U - Utilities    : Atomic helpers
+    (e.g., .u-margin-top-10, .util-text-center, etc.)
+* 5.R - Responsive   : Mobile-first media queries
+    (e.g., @media (min-width: 768px) { ... },etc.)
+*/
+
+/*  # -------------------------------------------------- #
+    #                   Foundation                       #
+    # -------------------------------------------------- # */
+
+* {
+    /* --- Box Model --- */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* --- Variables --- */
+    /* *8-Point Spacing System */
+    --space-3xs: 0.125rem;  /* 2px - For Tiny Detail */
+    --space-2xs: 0.25rem;   /* 4px - For Small Detail */
+    --space-xs: 0.5rem;     /* 8px - Space between small elements */
+    --space-sm: 1rem;       /* 16px - Space between items inside a component */
+    --space-md: 1.5rem;     /* 24px - Space between paragraph or the suchlike */
+    --space-lg: 2rem;       /* 32px - Space padding inside small component */
+    --space-xl: 3rem;       /* 48px - Space padding inside section */
+    --space-2xl: 4rem;      /* 64px - Big space when needed */
+    --space-3xl: 5rem;      /* 80px - More bigger space when needed */
+    --space-4xl: 6rem;      /* 96px - Extra big space when needed */
+    --space-5xl: 7rem;      /* 128px - Extra big space when needed */
+    --space-6xl: 8rem;      /* 160px - Extra big space when needed */
+
+    /* *Typographic Scale System */
+    --font-size-xs: 0.75rem;    /* 12px or 9pt */
+    --font-size-sm: 0.875rem;   /* 14px or 10.5pt */
+    --font-size-base: 1rem;     /* 16px or 12pt */
+    --font-size-md: 1.25rem;    /* 20px or 15pt */
+    --font-size-lg: 1.5rem;     /* 24px or 18pt */
+    --font-size-xl: 2rem;       /* 32px or 24pt */
+    --font-size-2xl: 2.5rem;    /* 40px or 30pt */
+    --font-size-3xl: 3rem;      /* 48px or 36pt */
+    --font-size-4xl: 3.5rem;    /* 56px or 42pt */
+
+    /* *Line Height */
+    --line-height-tight: 1.2;   /* Line spacing for heading text (h1,h2,h3,etc.) */
+    --line-height-normal: 1.6;  /* Line spacing for body text */
+    --line-height-loose: 2;     /* Optional line spacing for large text blocks */
+
+    /* *Radius Value */
+    --radius-xs: 0.125rem;  /* 2px - For small elements */
+    --radius-sm: 0.25rem;   /* 4px - For medium */
+    --radius-base: 0.5rem;  /* 8px - For large elements */
+    --radius-lg: 0.75rem;   /* 12px - For large elements */
+    --radius-xl: 1rem;      /* 16px - For extra large elements */
+    --radius-2xl: 1.5rem;   /* 24px - For extra large elements */
+
+    /* *Coloring */
+    --color-light-gray: rgb(230, 230, 230);
+    --color-light-blue: rgb(32, 114, 202);
+    --color-light-red: rgb(251, 70, 70);
+    --color-light-violet: rgb(207, 159, 255);
+    --color-solid-black: rgb(0, 0, 0);
+    --color-solid-white: rgb(255, 255, 255);
+    --color-solid-gray: rgb(160, 160, 160);
+}
+
+html {
+    /* --- Box Model --- */
+    padding: 0 var(--space-lg) 0;
+
+    /* --- Interaction, Animation, & Misc --- */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* --- Typography --- */
+    font-family: 'Arial', sans-serif;
+    line-height: var(--line-height-normal);
+    background-color: var(--color-solid-white);
+}
+
+/*  # -------------------------------------------------- #
+    #                   Component                        #
+    # -------------------------------------------------- # */
+
+/*  # -------------------------------------------------- #
+    #                   Modifier                         #
+    # -------------------------------------------------- # */
+
+/*  # -------------------------------------------------- #
+    #                  Utilities                         #
+    # -------------------------------------------------- # */
+
+/*  # -------------------------------------------------- #
+    #              Responsive Media                      #
+    # -------------------------------------------------- # */

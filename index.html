@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>F.End Learning Project 003 - To Do List</title>
+    
+<link
+        rel="stylesheet"
+        href="styling.css">
+</head>
+
+<body>
+    <!-- # HEADER -->
+    <header>
+        <h1>MyoNote - To-Do List App</h1>
+        <p>Manage your tasks efficiently!</p>
+    </header>
+    <!-- # End of Header -->
+
+    <!-- # MAIN -->
+    <div class="page-container">
+        <main class="todo-container">
+
+            <!-- ==# To-do Input Form -->
+            <h2 class="add-todo-title">
+                Add a New Task
+            </h2>
+
+            <form id="add-todo-form">
+                <div class="input-group">
+                    <label for="todo-input">Task/Note Name:</label>
+                    <input 
+                        type="text"
+                        id="todo-input"
+                        name="todo"
+                        placeholder="Enter your task or note here..."
+                        required>
+                </div>
+
+                <!-- ===# Save To-do Submit Button -->
+                <div class="add-todo-save-btn">
+                    <button 
+                        type="submit"
+                        id="save-todo-btn">
+                        Add Task
+                    </button>
+                </div>
+            </form>
+
+            <!-- ==# To-do List Display -->
+            <h2 class="todo-list-title">
+                Your Tasks/Notes
+            </h2>
+
+            <ul id="todo-list">
+                <!-- All of To-do items will be dynamically added here -->
+            </ul>
+        </main>
+    </div>
+    <!-- # End of Main -->
+
+    <!-- # FOOTER -->
+    <footer>
+    </footer>
+    <!-- # End of Footer -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
