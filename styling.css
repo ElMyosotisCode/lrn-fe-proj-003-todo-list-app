@@ -72,18 +72,26 @@ which I named it 'FoCoMUR' styling system
     --radius-2xl: 1.5rem;   /* 24px - For extra large elements */
 
     /* *Coloring */
-    --color-light-gray: rgb(230, 230, 230);
+    --color-light-gray: rgb(245, 245, 245);
     --color-light-blue: rgb(32, 114, 202);
     --color-light-red: rgb(251, 70, 70);
     --color-light-violet: rgb(207, 159, 255);
     --color-solid-black: rgb(0, 0, 0);
     --color-solid-white: rgb(255, 255, 255);
     --color-solid-gray: rgb(160, 160, 160);
+    --color-overlay-black-subtle: rgba(0, 0, 0, 0.1);
+
+    /* *Task Note Card Colors */
+    --color-card-1: rgb(255, 179, 186); /* Light Pink */
+    --color-card-2: rgb(255, 223, 186); /* Light Orange */
+    --color-card-3: rgb(255, 255, 186); /* Light Yellow */
+    --color-card-4: rgb(186, 255, 201); /* Light Green */
+    --color-card-5: rgb(186, 225, 255); /* Light Blue */
 }
 
 html {
     /* --- Box Model --- */
-    padding: 0 var(--space-lg) 0;
+    padding: var(--space-lg);
 
     /* --- Interaction, Animation, & Misc --- */
     scroll-behavior: smooth;
@@ -93,16 +101,216 @@ body {
     /* --- Typography --- */
     font-family: 'Arial', sans-serif;
     line-height: var(--line-height-normal);
-    background-color: var(--color-solid-white);
+    background-color: var(--color-light-gray);
 }
 
 /*  # -------------------------------------------------- #
     #                   Component                        #
     # -------------------------------------------------- # */
 
+/* ==# Global Styling and Reuse-able Rulesets #== */
+
+.page-container {
+    /* --- Box Model --- */
+    max-width: 48rem; /* 768px */
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+}
+
+.todo-app__section-title {
+    /* --- Layout & Positioning --- */
+    position: relative;
+
+    /* --- Box Model --- */
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-xl);
+    color: var(--color-solid-black);
+    line-height: var(--line-height-tight);
+    text-align: center;
+}
+
+.todo-app {
+    --placeholder: ;
+}
+
+.todo-app__input-group {
+    /* --- Layout & Positioning --- */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+
+    /* --- Box Model --- */
+    margin-bottom: var(--space-lg);
+}
+
+.todo-app__label {
+    /* --- Typography --- */
+    font-weight: bold;
+    font-size: var(--font-size-base);
+}
+
+.todo-app__input-area {
+    /* --- Box Model --- */
+    padding: var(--space-sm);
+    border: 1px solid var(--color-solid-gray);
+    border-radius: var(--radius-base);
+    
+    /* --- Typography --- */
+    font-family: inherit;
+    font-size: var(--font-size-base);
+}
+
+.todo-app__item {
+    /* --- Box Model --- */
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-sm);
+
+    /* --- Visual --- */
+    list-style: none; /* Menghilangkan bullet points! */
+}
+
+.todo-app__item:nth-child(4n + 1) {
+    background-color: var(--color-card-1);
+}
+
+.todo-app__item:nth-child(4n + 2) {
+    background-color: var(--color-card-2);
+}
+
+.todo-app__item:nth-child(4n + 3) {
+    background-color: var(--color-card-3);
+}
+
+.todo-app__item:nth-child(4n + 4) {
+    background-color: var(--color-card-4);
+}
+
+.todo-app__item-title {
+    /* --- Box Model --- */
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-md);
+    font-weight: bolder;
+    color: var(--color-solid-black);
+    line-height: var(--line-height-tight);
+    text-align: center;
+
+    /* --- Visual --- */
+    background-color: var(--color-overlay-black-subtle);
+}
+
+.todo-app__item-details {
+    /* --- Box Model --- */
+    padding: var(--space-sm);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-base);
+    color: var(--color-solid-black);
+    line-height: var(--line-height-normal);
+}
+
+/* ==# -------------------------------------- #== */
+
+/* ==# Application-Specific Rulesets #== */
+
+.app-header__title {
+    /* --- Layout & Positioning --- */
+    text-align: center;
+
+    /* --- Box Model --- */
+    margin-bottom: var(--space-sm);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-3xl);
+    color: var(--color-solid-black);
+    line-height: var(--line-height-tight);
+}
+
+.app-header__slogan {
+    /* --- Layout & Positioning --- */
+    margin-bottom: var(--space-lg);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-md);
+    color: var(--color-light-violet);
+    text-align: center;
+}
+
+.todo-app__submit-btn {
+    /* --- Box Model --- */
+    width: 100%;
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: var(--radius-base);
+    
+    /* --- Typography --- */
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--color-solid-black);
+    
+    /* --- Visual --- */
+    background-color: var(--color-light-violet);
+}
+
+.todo-completed {
+    /* --- Typography --- */
+    color: var(--color-solid-gray);
+    text-decoration: line-through;
+}
+
+/* ==# ----------------------------- #== */
+
 /*  # -------------------------------------------------- #
     #                   Modifier                         #
     # -------------------------------------------------- # */
+
+/* =# Decorations #= */
+
+/* ==# Creating a floating card look #== */
+.todo-app__add-section,
+.todo-app__list-section {
+    /* --- Box Model --- */
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    border-radius: var(--radius-base);
+
+    /* --- Visual --- */
+    background-color: var(--color-solid-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==# Drawing line under h2 #== */
+.todo-app__section-title::after {
+    /* --- Layout & Positioning --- */
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    /* --- Box Model --- */
+    height: 0.25rem;
+    width: 25rem;
+    border-radius: var(--radius-sm);
+
+    /* --- Visual --- */
+    background-color: var(--color-solid-gray);
+
+    /* --- Interaction & Animation --- */
+    transform: translateX(-50%);
+    content: "";
+}
+
+/* ==# Changing clicked input-area's highlight color #== */
+.todo-app__input-area:focus {
+  outline: none; /* Hapus outline default yang kurang menarik */
+  border-color: var(--color-light-violet); /* Ganti warna border saat aktif */
+  box-shadow: 0 0 0 3px rgba(207, 159, 255, 0.4); /* Tambahkan "glow" effect */
+}
 
 /*  # -------------------------------------------------- #
     #                  Utilities                         #
