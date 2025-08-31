@@ -1,31 +1,48 @@
-console.log("JavaScript is connected! ✨");
+console.log('Script loaded');
 
-// `const` practice (for constat values that won't change)
-const projectName = "MyoNote - To Do List App";
-const projectVersion = "0.1.0";
+const todos = [
+    {
+        id: 1, 
+        title: 'Learning HTML',
+        details: 'Study the basics of HTML including elements, attributes, and semantic tags.',
+        completed: true
+    },
+    {
+        id: 2, 
+        title: 'Learning CSS', 
+        details: 'Understand CSS fundamentals such as selectors, properties, and the box model.',
+        completed: true
+    },
+    {
+        id: 3, 
+        title: 'Learning JavaScript',
+        details: 'Get familiar with JavaScript syntax, data types, and basic programming concepts.',
+        completed: false
+    },
+];
 
-// `let` practice (for variables that can change in the future)
-let activeTasks = 5;
-let isProjectActive = true;
-let projectDueDate;
+const todoListElement = document.querySelector('#todo-list');
 
-// Variable calling and scanning practice
-console.log("Project Name:", projectName);
-console.log("The data-type is:", typeof projectName);
+const renderTodos = () => {
+    let todosHTML = '';
 
-console.log("Project Version:", projectVersion);
-console.log("The data-type is:", typeof projectVersion);
+    todos.forEach(
+        (todo) => { 
+            todosHTML += `
+                <li class="todo-app__item ${ todo.completed ? 'todo-completed' : '' }">
+                    <h4 class="todo-app__item-title ${ todo.completed ? 'todo-completed' : '' }">
+                        ${ todo.title }
+                    </h4>
 
-console.log("Active Tasks:", activeTasks);
-console.log("The data-type is:", typeof activeTasks);
+                    <p class="todo-app__item-details ${ todo.completed ? 'todo-completed' : '' }">
+                        ${ todo.details }
+                    </p>
+                </li>
+            `;
+        }
+    );
 
-console.log("Is Project Active?", isProjectActive);
-console.log("The data-type is:", typeof isProjectActive);
+    todoListElement.innerHTML = todosHTML;
+}
 
-console.log("Project Due Date:", projectDueDate);
-console.log("The data-type is:", typeof projectDueDate);
-
-// ---
-
-activeTasks = 3; // Updating the number of active tasks
-console.log("Updated Active Tasks:", activeTasks);
+renderTodos();
