@@ -42,6 +42,10 @@ So here are my plans for this learning project... </br>
     
     *  _Creating a `.completed` state class that acts as a bridge between `CSS` and `JavaScript` to reflect task status._
 
+* ☑ **`CSS`** | <u> Modern styling for all interactive elements. </u>
+
+    * _Adding `transition` with `:hover` and `:focus` styling so it looks more lively._ 
+
 <br>
 
 * ☑ **`JS`** | <u> Using a structured data list as the Web-App's brain. </u>
@@ -52,7 +56,7 @@ So here are my plans for this learning project... </br>
 
     * _Implementing a `render()` function that dynamically generates `HTML` from the data array and injects it into the `DOM` ._
 
-* ⬜ **`JS`** | <u> Making the "Add Task" button actually work. </u>
+* ☑ **`JS`** | <u> Making the "Add Task" button actually work. </u>
 
     * _Capturing user input via a `submit` event listener and updating the data array with the new task._
 
@@ -71,6 +75,7 @@ So here are my plans for this learning project... </br>
 <br>
 
 ### 🎯 **_Phase 2 : Web-App Memory_**
+_*** TBA_
 
 <br>
 
@@ -79,13 +84,16 @@ So here are my plans for this learning project... </br>
 <br>
 
 ### 🎯 **_Phase 3 : Web-App Polishing_**
+_*** TBA_
+
+<br><br>
 
 ---
 
 ## 🛠️ Development Log / Project Journal
 
 ### Project Progress Session 01 - Project Setup & JavaScript First Contact
-📅 _**Date:** 2025-08-26_
+📅 _**Date:** 2025, Aug. 26<sup>th</sup>_
 
 <br>
 
@@ -115,12 +123,12 @@ So here are my plans for this learning project... </br>
 
 <img src="images\documentations\webapp-screenshot-01.JPG" alt="Web App Screenshot 01" width="850">
 
+<br><br>
 <div align=center>- - - - -</div>
-
----
+<br><br>
 
 ### Project Progress Session 02 - Bringing Data to Life
-📅 _**Date:** 2025-08-31_
+📅 _**Date:** 2025, Aug. 27<sup>th</sup>_
 
 <br>
 
@@ -136,7 +144,7 @@ So here are my plans for this learning project... </br>
 
 * 📌 **New Feature: "Completed" Tasks Now Look Different!**
 
-    * We've built a "bridge" between our data and the visual design. Now, if a task is marked as 'completed' in the data, it will automatically appear crossed-out on the screen, giving you clear visual feedback on your progress.
+    * I've built a "bridge" between our data and the visual design. Now, if a task is marked as 'completed' in the data, it will automatically appear crossed-out on the screen, giving you clear visual feedback on your progress.
 
 <br>
 
@@ -152,11 +160,55 @@ So here are my plans for this learning project... </br>
 
 ### Web-App Visual in Progress Session 02 📸
 
-<img src="images/documentations/webapp-screenshot-02.JPG" alt="Web App Screenshot 02" width="850">
+<img src="images/documentations/webapp-screenshot-02.png" alt="Web App Screenshot 02" width="850">
 <br>
-<img src="images/documentations/webapp-screenshot-03.JPG" alt="Web App Screenshot 03" width="850">
+<img src="images/documentations/webapp-screenshot-03.png" alt="Web App Screenshot 03" width="850">
 
+<br><br>
 <div align=center>- - - - -</div>
+<br><br>
+
+### Project Progress Session 03 - The App Comes to Life!
+📅 _**Date:** 2025, Sept. 2<sup>nd</sup>_
+
+<br>
+
+💬 This is the update where **MyoNote** learns to listen to user's input. Today, I've added interactivity, transforming the app from a static display into a dynamic workspace. The core focus was to make the "_Add Task_" feature fully functional, creating a seamless loop from user thought to digital note. What was once just a button is now a gateway to productivity, although it still cannot be completely saved in the browser yet.
+
+* 📍 **Major Feature: The "Add Task" Form is Now Fully Operational!**
+
+    * The application now actively listens for when you hit the "_Add Task_" button or press Enter.
+
+    * Your new notes (complete with a title and details) are now instantly captured and added to your task list in real-time. No page reload required!
+
+    * I've also added a smart validation layer; the app will now politely ask you to fill in the fields if you try to submit an empty note, ensuring your list stays clean and meaningful.
+
+* 📍 **UI/UX Upgrade: A More Responsive & Satisfying Interface!**
+
+    * **Interactive Feedback:** <br> 
+    The input fields and the "_Add Task_" button now provide clear visual feedback. Input fields will "_glow_" when you're typing, and the button will subtly lift and change, making interactions feel more tangible and responsive.
+
+    * **Smoother Animations:** <br> 
+    All visual changes, from the input glow to the button hover, are now powered by `CSS` transition. This removes any jarring, instant changes and replaces them with fluid, professional animations.
+
+    * **Smarter Text Formatting:** <br>
+    Intentional line breaks and spacing in your detailed notes are preserved, making **MyoNote** feel much more like a true note-taking app.
+
+* 📍 **Behind the Scene Improvement: A Better Color System!**
+
+    * I've refactored my entire `CSS` color palette into a scalable and maintainable system. By separating "_raw ingredients_" ( `Primitive variables` ; RGB-values) from "_ready-to-use_" colors ( `Semantic variables` ).
+
+<br>
+
+### Web-App Visual in Progress Session 03 📸
+
+<img src="images/documentations/webapp-screenshot-04.png" alt="Web App Screenshot 04" width="850">
+<br>
+<img src="images/documentations/webapp-screenshot-05.png" alt="Web App Screenshot 05" width="850">
+<br>
+<img src="images/documentations/webapp-screenshot-06.png" alt="Web App Screenshot 06" width="850">
+
+<br><br>
 
 ---
 
@@ -243,12 +295,53 @@ So here are my plans for this learning project... </br>
     
     *   Practiced creating subtle, dynamic background overlays using `rgba()` with a low alpha value, and learned the professional technique of separating RGB values into their own CSS variables for maximum flexibility and maintainability.
 
+<br><br>
 <div align=center>- - - - -</div>
+<br><br>
+
+### Learning Module Session 03 ~ Event Handling, DOM Interaction, & Another Chapter of CSS Architecture
+
+</br>
+
+📚 Here are some key points I learned through this session:
+
+* 🔸 **Event-Driven Programming: The Core of Interactivity**
+
+    * Mastered the foundational concept of **Event-Driven Programming** . Instead of a linear script, the application now "listens" for user actions and reacts accordingly.
+
+    * Utilized `.addEventListener()` to attach a "_listener_" to a specific DOM element. This is the primary mechanism for connecting user actions (like clicks or form submissions) to `JavaScript` functions.
+
+    * Learned the importance of the `'submit'` event for forms. It's superior to a `'click'` event on a `.button` because it is more accessible and handles a wider range of user inputs, including pressing the _Enter_ key.
+
+<br>
+
+* 🔸 **The Full "User Action -> Update Data -> Render View" Loop**
+
+    * **Solidified the full interactive loop:** <br> 
+    An event listener captures the user's action, which then triggers a function that updates the data source (our Array of Objects) using the `.push()` method.
+
+    * Immediately after the data is updated, the `renderTodos()` function is called again. This re-renders the entire view based on the new state of the "Single Source of Truth," making the UI update instantly and automatically.
+
+    * Practiced essential UX enhancement by using `formElement.reset()` to clear input fields after a successful submission, preparing the UI for the next user input.
+
+<br>
+
+* 🔸 **Advanced CSS Architecture & Interaction Design**
+
+    * Architected a professional and scalable **`CSS` Color System** by separating **`Primitive Variables`** (raw RGB values) from **`Semantic Variables`** (ready-to-use colors with functional names like `--color-brand-primary` or `--color-overlay-subtle` ). This greatly improves maintainability and follows the DRY (_Don't Repeat Yourself_) principle.
+
+    * Deepened the knowledge in `CSS pseudo-classes` like `:hover` and `:focus` to provide clear, intuitive visual feedback during user interaction.
+
+    * Leveraged the transition property to animate changes in `CSS` properties ( `background-color` , `transform`, `box-shadow` ), transforming abrupt state changes into smooth, professional, and satisfying visual effects.
+
+    * Discovered the power of multi-layered box-shadow (separating multiple shadow definitions with a comma) to create complex visual effects like a "_glow_" and a "_float_" shadow simultaneously on a single element.
+
+<br>
 
 ---
 
 <div align=right>
 
-**_Updated on : 2025, Aug. 31st_**
+**_Updated on : 2025, Sept. 2<sup>nd</sup>_**
 
 </div>
