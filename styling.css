@@ -32,8 +32,9 @@ which I named it 'FoCoMUR' styling system
 }
 
 :root {
-    /* --- Variables --- */
-    /* *8-Point Spacing System */
+/* =# Variables #= */
+
+    /* ==# 8-Point Spacing System #== */
     --space-3xs: 0.125rem;  /* 2px - For Tiny Detail */
     --space-2xs: 0.25rem;   /* 4px - For Small Detail */
     --space-xs: 0.5rem;     /* 8px - Space between small elements */
@@ -46,8 +47,9 @@ which I named it 'FoCoMUR' styling system
     --space-4xl: 6rem;      /* 96px - Extra big space when needed */
     --space-5xl: 7rem;      /* 128px - Extra big space when needed */
     --space-6xl: 8rem;      /* 160px - Extra big space when needed */
+    /* ==# ---------------------- #== */
 
-    /* *Typographic Scale System */
+    /* ==# Typographic Scale System #== */
     --font-size-xs: 0.75rem;    /* 12px or 9pt */
     --font-size-sm: 0.875rem;   /* 14px or 10.5pt */
     --font-size-base: 1rem;     /* 16px or 12pt */
@@ -57,36 +59,79 @@ which I named it 'FoCoMUR' styling system
     --font-size-2xl: 2.5rem;    /* 40px or 30pt */
     --font-size-3xl: 3rem;      /* 48px or 36pt */
     --font-size-4xl: 3.5rem;    /* 56px or 42pt */
+    /* ==# ------------------------ #== */
 
-    /* *Line Height */
-    --line-height-tight: 1.2;   /* Line spacing for heading text (h1,h2,h3,etc.) */
-    --line-height-normal: 1.6;  /* Line spacing for body text */
-    --line-height-loose: 2;     /* Optional line spacing for large text blocks */
+    /* ==# Line Height #== */
+    --line-height-very-tight: 1;
+    --line-height-tight: 1.2;    /* Line spacing for heading text (h1,h2,h3,etc.) */
+    --line-height-slightly-tight: 1.4;
+    --line-height-normal: 1.6;    /* Line spacing for body text */
+    --line-height-slightly-loose: 1.8;
+    --line-height-loose: 2;      /* Optional line spacing for large text blocks */
+    /* ==# ------------ #== */
 
-    /* *Radius Value */
+    /* ==# Radius Value #== */
     --radius-xs: 0.125rem;  /* 2px - For small elements */
     --radius-sm: 0.25rem;   /* 4px - For medium */
     --radius-base: 0.5rem;  /* 8px - For large elements */
     --radius-lg: 0.75rem;   /* 12px - For large elements */
     --radius-xl: 1rem;      /* 16px - For extra large elements */
     --radius-2xl: 1.5rem;   /* 24px - For extra large elements */
+    /* ==# ------------ #== */
 
-    /* *Coloring */
-    --color-light-gray: rgb(245, 245, 245);
-    --color-light-blue: rgb(32, 114, 202);
-    --color-light-red: rgb(251, 70, 70);
-    --color-light-violet: rgb(207, 159, 255);
-    --color-solid-black: rgb(0, 0, 0);
-    --color-solid-white: rgb(255, 255, 255);
-    --color-solid-gray: rgb(160, 160, 160);
-    --color-overlay-black-subtle: rgba(0, 0, 0, 0.1);
+    /* ==# Coloring #== */
+        /* ===# COLOR PRIMITIVES (Raw RGB Hex) #=== */
+        --color-light-violet-rgb: 220, 214, 247;
+        --color-light-blue-rgb: 144, 213, 255;
+        --color-light-green-rgb: 136, 231, 136;
+        --color-light-red-rgb: 255, 138, 128;
+        --color-violet-rgb: 175, 105, 238;
+        --color-blue-rgb: 37, 99, 235;
+        --color-green-rgb: 30, 132, 73;
+        --color-red-rgb: 255, 80, 80;
+        --color-yellow-rgb: 255, 244, 79;
 
-    /* *Task Note Card Colors */
+        --color-gray-100-rgb: 248, 248, 248;
+        --color-gray-400-rgb: 192, 192, 192;
+        --color-gray-700-rgb: 100, 100, 100;
+        --color-gray-900-rgb: 33, 33, 33;
+        /* ===# ------------------------------ #=== */
+
+        /* ===# SEMANTIC COLORS (Ready-to-Use Palette) #=== */
+        /* -- Brand & Actions -- */
+        --color-brand-primary: rgb(var(--color-violet-rgb));
+        --color-brand-secondary: rgb(var(--color-light-violet-rgb));
+        --color-action-primary: rgb(var(--color-blue-rgb));
+        --color-action-success: rgb(var(--color-green-rgb));
+        --color-action-danger: rgb(var(--color-red-rgb));
+        --color-action-warning: rgb(var(--color-yellow-rgb));
+
+        /* -- Backgrounds -- */
+        --color-background-body: rgb(var(--color-gray-100-rgb));
+        --color-background-component: white;
+        --color-overlay-subtle: rgba(var(--color-gray-900-rgb), 0.075);
+
+        /* -- Text -- */
+        --color-text-primary: rgb(var(--color-gray-900-rgb));
+        --color-text-secondary: rgb(var(--color-gray-700-rgb));
+        --color-text-subtle: rgb(var(--color-gray-400-rgb));
+        --color-text-button: white;
+
+        /* -- Borders -- */
+        --color-border-default: rgb(var(--color-gray-400-rgb));
+        /* ===# ------------------------------------- #=== */
+    /* ==# -------- #== */
+
+
+    /* ==# Task Note Card Colors #== */
     --color-card-1: rgb(255, 179, 186); /* Light Pink */
     --color-card-2: rgb(255, 223, 186); /* Light Orange */
     --color-card-3: rgb(255, 255, 186); /* Light Yellow */
     --color-card-4: rgb(186, 255, 201); /* Light Green */
     --color-card-5: rgb(186, 225, 255); /* Light Blue */
+    /* ==# --------------------- #== */
+
+/* =# --------- #= */
 }
 
 html {
@@ -101,7 +146,7 @@ body {
     /* --- Typography --- */
     font-family: 'Arial', sans-serif;
     line-height: var(--line-height-normal);
-    background-color: var(--color-light-gray);
+    background-color: var(--color-background-body);
 }
 
 /*  # -------------------------------------------------- #
@@ -127,7 +172,7 @@ body {
 
     /* --- Typography --- */
     font-size: var(--font-size-xl);
-    color: var(--color-solid-black);
+    color: var(--color-text-primary);
     line-height: var(--line-height-tight);
     text-align: center;
 }
@@ -155,7 +200,7 @@ body {
 .todo-app__input-area {
     /* --- Box Model --- */
     padding: var(--space-sm);
-    border: 1px solid var(--color-solid-gray);
+    border: 1px solid var(--color-border-default);
     border-radius: var(--radius-base);
     
     /* --- Typography --- */
@@ -164,9 +209,12 @@ body {
 }
 
 .todo-app__item {
+    /* --- Layout & Positioning --- */
+    position: relative;
+
     /* --- Box Model --- */
     margin-bottom: var(--space-lg);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-base);
 
     /* --- Visual --- */
     list-style: none; /* Menghilangkan bullet points! */
@@ -188,20 +236,44 @@ body {
     background-color: var(--color-card-4);
 }
 
+.todo-app__item:nth-child(4n + 5) {
+    background-color: var(--color-card-5);
+}
+
+.todo-app__item-date {
+    /* --- Layout & Positioning --- */
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+
+    /* --- Box Model --- */
+    padding: var(--space-xs);;
+    border-radius: var(--radius-sm);
+
+    /* --- Typography --- */
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-slightly-tight);
+
+    /* --- Visual --- */
+    background-color: var(--color-overlay-subtle);
+}
+
 .todo-app__item-title {
     /* --- Box Model --- */
     margin-bottom: var(--space-sm);
-    padding: var(--space-sm);
+    padding: var(--space-md) var(--space-md) var(--space-lg) var(--space-md);
+    border-radius: var(--radius-base) var(--radius-base) 0 0;
 
     /* --- Typography --- */
     font-size: var(--font-size-md);
     font-weight: bolder;
-    color: var(--color-solid-black);
-    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
     text-align: center;
 
     /* --- Visual --- */
-    background-color: var(--color-overlay-black-subtle);
+    background-color: var(--color-overlay-subtle);
 }
 
 .todo-app__item-details {
@@ -210,8 +282,9 @@ body {
 
     /* --- Typography --- */
     font-size: var(--font-size-base);
-    color: var(--color-solid-black);
+    color: var(--color-text-primary);
     line-height: var(--line-height-normal);
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
 }
 
 /* ==# -------------------------------------- #== */
@@ -223,11 +296,11 @@ body {
     text-align: center;
 
     /* --- Box Model --- */
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
 
     /* --- Typography --- */
     font-size: var(--font-size-3xl);
-    color: var(--color-solid-black);
+    color: rgb(var(--color-violet-rgb));
     line-height: var(--line-height-tight);
 }
 
@@ -237,7 +310,7 @@ body {
 
     /* --- Typography --- */
     font-size: var(--font-size-md);
-    color: var(--color-light-violet);
+    color: var(--color-text-secondary);
     text-align: center;
 }
 
@@ -250,16 +323,15 @@ body {
     
     /* --- Typography --- */
     font-size: var(--font-size-base);
-    font-weight: bold;
-    color: var(--color-solid-black);
+    color: var(--color-text-primary);
     
     /* --- Visual --- */
-    background-color: var(--color-light-violet);
+    background-color: rgb(var(--color-light-violet-rgb));
 }
 
 .todo-completed {
     /* --- Typography --- */
-    color: var(--color-solid-gray);
+    color: var(--color-text-secondary);
     text-decoration: line-through;
 }
 
@@ -271,7 +343,7 @@ body {
 
 /* =# Decorations #= */
 
-/* ==# Creating a floating card look #== */
+/* ==# Creating a floating card look for page container #== */
 .todo-app__add-section,
 .todo-app__list-section {
     /* --- Box Model --- */
@@ -280,8 +352,29 @@ body {
     border-radius: var(--radius-base);
 
     /* --- Visual --- */
-    background-color: var(--color-solid-white);
+    background-color: var(--color-background-component);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==# Creating a floating card look for notes #== */
+.todo-app__item:nth-child(4n + 1) {
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.todo-app__item:nth-child(4n + 2) {
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.todo-app__item:nth-child(4n + 3) {
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.todo-app__item:nth-child(4n + 4) {
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.todo-app__item:nth-child(4n + 5) {
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
 }
 
 /* ==# Drawing line under h2 #== */
@@ -298,18 +391,59 @@ body {
     border-radius: var(--radius-sm);
 
     /* --- Visual --- */
-    background-color: var(--color-solid-gray);
+    background-color: rgb(var(--color-gray-400-rgb));
 
     /* --- Interaction & Animation --- */
     transform: translateX(-50%);
     content: "";
 }
 
+/* =# ----------- #= */
+
+/* =# Animations #= */
+
 /* ==# Changing clicked input-area's highlight color #== */
+.todo-app__input-area {
+    transition: all 0.4s ease-in-out;
+}
+
 .todo-app__input-area:focus {
-  outline: none; /* Hapus outline default yang kurang menarik */
-  border-color: var(--color-light-violet); /* Ganti warna border saat aktif */
-  box-shadow: 0 0 0 3px rgba(207, 159, 255, 0.4); /* Tambahkan "glow" effect */
+    outline: none; /* Hapus outline default yang kurang menarik */
+    border-color: rgb(var(--color-violet-rgb)); /* Ganti warna border saat aktif */
+    box-shadow: 0 0 0 3px rgba(var(--color-violet-rgb), 0.4); /* Tambahkan "glow" effect */
+}
+
+/* ==# Hovering FX for submit button #== */
+.todo-app__submit-btn {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.todo-app__submit-btn:hover {
+    background-color: rgb(var(--color-light-violet-rgb));
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075);
+}
+
+.todo-app__submit-btn:focus {
+    outline: none;
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075);
+}
+
+/* =# ---------- #= */
+
+/* =# Text Modifier #= */
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 /*  # -------------------------------------------------- #
