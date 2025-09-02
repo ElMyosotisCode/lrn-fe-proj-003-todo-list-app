@@ -160,9 +160,9 @@ _*** TBA_
 
 ### Web-App Visual in Progress Session 02 📸
 
-<img src="images/documentations/webapp-screenshot-02.png" alt="Web App Screenshot 02" width="850">
+<img src="images/documentations/webapp-screenshot-02.JPG" alt="Web App Screenshot 02" width="850">
 <br>
-<img src="images/documentations/webapp-screenshot-03.png" alt="Web App Screenshot 03" width="850">
+<img src="images/documentations/webapp-screenshot-03.JPG" alt="Web App Screenshot 03" width="850">
 
 <br><br>
 <div align=center>- - - - -</div>
@@ -202,11 +202,11 @@ _*** TBA_
 
 ### Web-App Visual in Progress Session 03 📸
 
-<img src="images/documentations/webapp-screenshot-04.png" alt="Web App Screenshot 04" width="850">
+<img src="images/documentations/webapp-screenshot-04.JPG" alt="Web App Screenshot 04" width="850">
 <br>
-<img src="images/documentations/webapp-screenshot-05.png" alt="Web App Screenshot 05" width="850">
+<img src="images/documentations/webapp-screenshot-05.JPG" alt="Web App Screenshot 05" width="850">
 <br>
-<img src="images/documentations/webapp-screenshot-06.png" alt="Web App Screenshot 06" width="850">
+<img src="images/documentations/webapp-screenshot-06.JPG" alt="Web App Screenshot 06" width="850">
 
 <br><br>
 
