@@ -9,14 +9,17 @@ It's me Misael (_ElMyosotisCode_) your future Front End Developer Expert.
 
 This project is my third learning project in the field of Front End Dev. As stated in the title, this project is a simple web application that contains a To-Do List tool.
 
+<br>
+
 ---
+
+<br>
 
 ## 🗺️ Roadmap
 
-So here are my plans for this learning project... </br>
-⚠️ _May change in the future_
+So here are my plans for this learning project... <br>
+⚠️ _May change in the future !_
 
-</br>
 
 ### 🎯 **_Phase 1 : The Base of Interactive Prototype_**
 
@@ -44,7 +47,11 @@ So here are my plans for this learning project... </br>
 
 * ☑ **`CSS`** | <u> Modern styling for all interactive elements. </u>
 
-    * _Adding `transition` with `:hover` and `:focus` styling so it looks more lively._ 
+    * _Adding `transition` with `:hover` and `:focus` styling so it looks more lively._
+
+* ☑ **`CSS`** | <u> Change the layout of the task items to be more appealing. </u>
+
+    * _Refactoring the item layout using `grid-template-areas` for better visual hierarchy._
 
 <br>
 
@@ -60,13 +67,16 @@ So here are my plans for this learning project... </br>
 
     * _Capturing user input via a `submit` event listener and updating the data array with the new task._
 
-* ⬜ **`JS`** | <u> Allowing users to mark tasks as completed. </u>
+* ☑ **`JS`** | <u> Allowing users to mark tasks as completed. </u>
 
     * _Using event delegation and the `.map()` method to toggle the `completed` status of a task in the data array._
 
-* ⬜ **`JS`** | <u> Allowing users to remove tasks from their list. </u>
+* ☑ **`JS`** | <u> Allowing users to remove tasks from their list. </u>
 
     * _Using event delegation and the `.filter()` method to remove a task from the data array._
+
+* ☑ **`JS`** | <u> Adding a confirmation step for delete actions. </u>
+    * _Implementing a `window.confirm()` dialog before deleting a task to prevent accidental data loss, improving user experience._
 
 <br>
 
@@ -86,9 +96,11 @@ _*** TBA_
 ### 🎯 **_Phase 3 : Web-App Polishing_**
 _*** TBA_
 
-<br><br>
+<br>
 
 ---
+
+<br>
 
 ## 🛠️ Development Log / Project Journal
 
@@ -175,6 +187,8 @@ _*** TBA_
 
 💬 This is the update where **MyoNote** learns to listen to user's input. Today, I've added interactivity, transforming the app from a static display into a dynamic workspace. The core focus was to make the "_Add Task_" feature fully functional, creating a seamless loop from user thought to digital note. What was once just a button is now a gateway to productivity, although it still cannot be completely saved in the browser yet.
 
+<br>
+
 * 📍 **Major Feature: The "Add Task" Form is Now Fully Operational!**
 
     * The application now actively listens for when you hit the "_Add Task_" button or press Enter.
@@ -182,6 +196,8 @@ _*** TBA_
     * Your new notes (complete with a title and details) are now instantly captured and added to your task list in real-time. No page reload required!
 
     * I've also added a smart validation layer; the app will now politely ask you to fill in the fields if you try to submit an empty note, ensuring your list stays clean and meaningful.
+
+<br>
 
 * 📍 **UI/UX Upgrade: A More Responsive & Satisfying Interface!**
 
@@ -193,6 +209,8 @@ _*** TBA_
 
     * **Smarter Text Formatting:** <br>
     Intentional line breaks and spacing in your detailed notes are preserved, making **MyoNote** feel much more like a true note-taking app.
+
+<br>
 
 * 📍 **Behind the Scene Improvement: A Better Color System!**
 
@@ -209,9 +227,61 @@ _*** TBA_
 <img src="images/documentations/webapp-screenshot-06.JPG" alt="Web App Screenshot 06" width="850">
 
 <br><br>
+<div align=center>- - - - -</div>
+<br><br>
+
+### Project Progress Session 04 - Full Control Over the Notes!
+📅 _**Date:** 2025, Sept. 04<sup>th</sup>_
+
+<br>
+
+💭 Today, I did some updates into **MyoNote**, which now it's becoming a more dynamic and manageable workspace. This update is all about giving the users full control over their created tasks. I've implemented the two most-requested features for any productivity app: the ability to mark tasks as "completed" and the option to delete them, making the core experience of the prototype feature is now one step closer to complete.
+
+<br>
+
+* 📌 **Major Feature: Mark Your Progress! Tasks Can Now Be Completed.**
+
+    * You can now click the checkbox next to any task to toggle its status. Completed tasks are instantly crossed out, giving you that satisfying sense of accomplishment and a clear view of what's left to do.
+
+    * _Behind the Scenes:_
+    This was achieved by using the immutable `.map()` method in `JavaScript`, which efficiently creates an updated list without altering the original data directly.
+
+<br>
+
+* 📌 **Major Feature: Keep It Tidy! You Can Now Delete Tasks.**
+
+    * No longer stuck with old or irrelevant notes! A new delete button (the trash icon) has been added to each task. Clicking it will permanently remove the task from your list.
+
+    * **Extra Safeguard Added:** <br>
+    To prevent accidental deletions of important notes, a simple confirmation pop-up will now appear, giving you a chance to reconsider. This small step makes the app much safer to use.
+
+    * _Behind the Scenes:_ <br>
+    The delete functionality is powered by the `.filter()` method, which  creates a new list containing only the tasks you want to keep.
+
+<br>
+
+* 📌 **Major UI/UX Redesign: A Smarter, More Intuitive Card Layout.**
+
+    * The layout of each task card has been slightly redesigned for better readability and usability. The card is now intelligently structured into a two-row system: a clear **Header** for the title and a **Body** for details and actions.
+
+    * _Behind the Scenes:_ <br>
+    Those layout were made by leveraging `CSS Grid` and its `grid-template-areas` property, allowing for a robust and responsive structure that was previously unachievable with simpler methods.
+
+<br>
+
+### Web-App Visual in Progress Session 04 📸
+
+<img src="images/documentations/webapp-screenshot-07.JPG" alt="Web App Screenshot 07" width="850">
+<br>
+<img src="images/documentations/webapp-screenshot-08.JPG" alt="Web App Screenshot 08" width="850">
+<br>
+<img src="images/documentations/webapp-screenshot-09.JPG" alt="Web App Screenshot 09" width="850">
+
+<br>
 
 ---
 
+<br>
 
 ## 💡 Points of Key Learnings
 
@@ -336,12 +406,50 @@ _*** TBA_
 
     * Discovered the power of multi-layered box-shadow (separating multiple shadow definitions with a comma) to create complex visual effects like a "_glow_" and a "_float_" shadow simultaneously on a single element.
 
+<br><br>
+<div align=center>- - - - -</div>
+<br><br>
+
+### Learning Module Session 04 ~ Advanced DOM Interaction, Data Manipulation, & Complex Layouting
+
+</br>
+
+💡 Here are some key points I learned through this session:
+
+* 🔹 **Mastering Event Delegation for Dynamic Content**
+
+    * Implemented the **Event Delegation** pattern by attaching a single event listener to a static parent element ( `<ul>` ). This is a highly efficient and performant alternative to attaching individual listeners to every child element ( `<li>` ), especially for dynamically generated content.
+
+    * Utilized `event.target` to identify the specific element that triggered the event within the parent container.
+
+    * Leveraged the `.closest()` method to traverse up the `DOM` tree from the `event.target` to find the relevant parent element (the `<li>` card) that holds the unique `data-id`. This creates a robust link between the user's action and the corresponding data entry.
+
+<br>
+
+* 🔹 **Immutable State Management with `.map()` and `.filter()`**
+
+    * Deepened the understanding of **immutable programming patterns**, a core concept in modern front-end frameworks like `React` . Instead of modifying the original todos array directly (mutating), new arrays are created with the updated state.
+
+    * Used the **`.filter()`** method to achieve immutable deletion. It iterates through the array and returns a new array containing only the elements that pass a specific condition (i.e., `todo.id !== idToDelete` ), effectively removing the target element without mutation.
+
+    * Used the **`.map()`** method for immutable updates. It iterates through the array and returns a new array of the same length, allowing for the transformation of a specific element (e.g., creating a new object with `...todo` and a toggled `completed` status) while keeping the other elements unchanged.
+
+<br>
+
+* 🔹 **Advanced `CSS` Layouting with `CSS Grid`**
+
+    * Transitioned from a one-dimensional layout approach (like Flexbox or Block flow) to a two-dimensional `CSS Grid` layout for more complex component design.
+
+    * Mastered the declarative and highly readable **`grid-template-areas`** property. This technique allows for "drawing" the layout structure with named areas, making the CSS intuitive and easy to maintain.
+
+    * Utilized `grid-template-columns` with `auto` and `fr` units to create a flexible and powerful column structure where some columns fit their content ( `auto` ) while others expand to fill the available space ( `1fr` ).
+
 <br>
 
 ---
 
 <div align=right>
 
-**_Updated on : 2025, Sept. 2<sup>nd</sup>_**
+**_Updated on : 2025, Sept. 4<sup>th</sup>_**
 
 </div>
