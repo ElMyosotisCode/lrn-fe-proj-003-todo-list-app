@@ -210,6 +210,14 @@ body {
 
 .todo-app__item {
     /* --- Layout & Positioning --- */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header header header"
+        "checker body deleter";
+    column-gap: var(--space-xs);
+    
     position: relative;
 
     /* --- Box Model --- */
@@ -240,6 +248,27 @@ body {
     background-color: var(--color-card-5);
 }
 
+.todo-app__item-column-content-header {
+    /* --- Layout & Positioning */
+    grid-area: header;
+
+    /* --- Box Model --- */
+    margin-bottom: var(--space-2xs);
+    padding: var(--space-md) var(--space-md) var(--space-lg) var(--space-md);
+    border-radius: var(--radius-base) var(--radius-base) 0 0;
+
+    /* --- Typography --- */
+    font-size: var(--font-size-md);
+    font-weight: bolder;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+    text-align: center;
+
+    /* --- Visual --- */
+    background-color: var(--color-overlay-subtle);
+
+}
+
 .todo-app__item-date {
     /* --- Layout & Positioning --- */
     position: absolute;
@@ -259,21 +288,22 @@ body {
     background-color: var(--color-overlay-subtle);
 }
 
-.todo-app__item-title {
+.todo-app__item-column-checkbox {
+    /* --- Layout & Positioning --- */
+    grid-area: checker;
+
     /* --- Box Model --- */
-    margin-bottom: var(--space-sm);
-    padding: var(--space-md) var(--space-md) var(--space-lg) var(--space-md);
-    border-radius: var(--radius-base) var(--radius-base) 0 0;
+    padding: var(--space-sm) 0 0 var(--space-sm);
+}
 
-    /* --- Typography --- */
-    font-size: var(--font-size-md);
-    font-weight: bolder;
-    color: var(--color-text-primary);
-    line-height: var(--line-height-normal);
-    text-align: center;
+.todo-app__item-complete-checkbox {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
 
-    /* --- Visual --- */
-    background-color: var(--color-overlay-subtle);
+.todo-app__item-column-content-body {
+    grid-area: body;
 }
 
 .todo-app__item-details {
@@ -285,6 +315,27 @@ body {
     color: var(--color-text-primary);
     line-height: var(--line-height-normal);
     white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+.todo-app__item-column-delete-btn {
+    padding: var(--space-sm) var(--space-sm) 0 0;
+    grid-area: deleter;
+    align-self: start;
+}
+
+.todo-app__item-delete-button {
+    cursor: pointer;
+}
+
+.todo-app__item-delete-button svg {
+    /* --- Box Model --- */
+    width: 2rem;
+    height: 2rem;
+
+    /* --- Interaction --- */
+    pointer-events: none;
+    stroke: var(--color-text-secondary);
+    transition: stroke 1s ease;
 }
 
 /* ==# -------------------------------------- #== */
