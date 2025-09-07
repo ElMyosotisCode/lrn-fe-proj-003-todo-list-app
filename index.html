@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>F.End Learning Project 003 - To Do List</title>
+    
+<link
+        rel="stylesheet"
+        href="styling.css">
+</head>
+
+<body>
+    <!-- # HEADER -->
+    <header>
+        <p class="app-header__prototype-label">
+            Prototype Version - Basic Functional Only
+        </p>
+
+        <h1 class="app-header__title">
+            MyoNote
+        </h1>
+
+        <p class="app-header__slogan">
+            Where notes meet action
+        </p>
+    </header>
+    <!-- # End of Header -->
+
+    <!-- # MAIN -->
+    <div class="page-container">
+        <main class="todo-app">
+
+            <!-- ==# Add New To-do Section #== -->
+            <section class="todo-app__add-section">
+                <h2 class="todo-app__section-title">
+                    Add New Task
+                </h2>
+
+                <form 
+                    id="add-todo-form"
+                    class="todo-app__form">
+
+                    <!-- ===# Input Form for the title of to-do -->
+                    <div class="todo-app__input-group">
+                        <label 
+                            for="input-task-title"
+                            class="todo-app__label">
+                            Task/Note Name:
+                        </label>
+
+                        <input
+                            id="input-task-title"
+                            class="todo-app__input-area"
+                            type="text"
+                            name="input-task_title"
+                            placeholder="Enter the title here..."
+                            required>
+                    </div>
+
+                    <!-- ===# Input Form for the details of to-do -->
+                    <div class="todo-app__input-group">
+                        <label 
+                            for="input-task-details"
+                            class="todo-app__label">
+                            Details:
+                        </label>
+
+                        <textarea 
+                            id="input-task-details"
+                            class="todo-app__input-area"
+                            name="input-task-details"
+                            rows="4"
+                            placeholder="Add more details here..."
+                            required></textarea>
+                    </div>
+
+                    <!-- ===# Submit Btn to save the new task -->
+                    <button 
+                        type="submit"
+                        id="task-save-btn"
+                        class="todo-app__submit-btn">
+                        Add Task
+                    </button>
+                </form>
+            </section>
+            <!-- ==# ------------------------- #== -->
+
+            <!-- ==# Displaying To-Do List #== -->
+            <section class="todo-app__list-section">
+                <h2 class="todo-app__section-title">
+                    Your Tasks/Notes
+                </h2>
+
+                <ul 
+                    id="todo-list"
+                    class="todo-app__list">
+                    <!-- All of To-do items will be dynamically added here -->
+                </ul>
+            </section>
+            <!-- ==# --------------------- #== -->
+        </main>
+    </div>
+    <!-- # End of Main -->
+
+    <!-- # FOOTER -->
+    <footer>
+        <div class="page-container app-footer">
+            <span class="app-footer__version">
+                Version 0.1.0-a
+            </span>
+        </div>
+    </footer>
+    <!-- # End of Footer -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
