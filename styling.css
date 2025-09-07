@@ -92,7 +92,11 @@ which I named it 'FoCoMUR' styling system
         --color-yellow-rgb: 255, 244, 79;
 
         --color-gray-100-rgb: 248, 248, 248;
+        --color-gray-200-rgb: 224, 224, 224;
+        --color-gray-300-rgb: 210, 210, 210;
         --color-gray-400-rgb: 192, 192, 192;
+        --color-gray-500-rgb: 160, 160, 160;
+        --color-gray-600-rgb: 130, 130, 130;
         --color-gray-700-rgb: 100, 100, 100;
         --color-gray-900-rgb: 33, 33, 33;
         /* ===# ------------------------------ #=== */
@@ -113,7 +117,8 @@ which I named it 'FoCoMUR' styling system
 
         /* -- Text -- */
         --color-text-primary: rgb(var(--color-gray-900-rgb));
-        --color-text-secondary: rgb(var(--color-gray-700-rgb));
+        --color-text-secondary: rgb(var(--color-gray-600-rgb));
+        --color-text-secondary: rgb(var(--color-gray-600-rgb));
         --color-text-subtle: rgb(var(--color-gray-400-rgb));
         --color-text-button: white;
 
@@ -283,6 +288,7 @@ body {
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
     line-height: var(--line-height-slightly-tight);
+    text-align: left;
 
     /* --- Visual --- */
     background-color: var(--color-overlay-subtle);
@@ -334,8 +340,6 @@ body {
 
     /* --- Interaction --- */
     pointer-events: none;
-    stroke: var(--color-text-secondary);
-    transition: stroke 1s ease;
 }
 
 /* ==# -------------------------------------- #== */
@@ -380,17 +384,65 @@ body {
     background-color: rgb(var(--color-light-violet-rgb));
 }
 
-.todo-completed {
-    /* --- Typography --- */
-    color: var(--color-text-secondary);
-    text-decoration: line-through;
+/* ==# ----------------------------- #== */
+
+/* ==# Extras #== */
+.app-header__prototype-label {
+    text-align: center;
+    color: var(--color-text-subtle);
+    font-style: italic;
+    font-size: var(--font-size-sm);
+    margin-top: calc(var(--space-lg) * -0.5); /* Sedikit naik agar lebih dekat dengan slogan */
+    margin-bottom: var(--space-lg);
+    background-color: var(--color-background-component);
+    border-radius: var(--radius-base);
 }
 
-/* ==# ----------------------------- #== */
+.app-footer {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-sm);
+    text-align: right; /* Mendorong konten ke kanan */
+}
+
+.app-footer__version {
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-sm);
+}
+
+/* ==# ------ #== */
+
+
 
 /*  # -------------------------------------------------- #
     #                   Modifier                         #
     # -------------------------------------------------- # */
+
+/* =# Transition Declarations #= */
+.todo-app__input-area {
+    transition: all 0.4s ease-in-out;
+}
+
+.todo-app__submit-btn {
+    transition: all 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.todo-app__item {
+    transition: 
+        filter 0.5s ease,
+        opacity 1s ease,
+        transform 0.5s ease;
+}
+
+.todo-app__item-title,
+.todo-app__item-details {
+    transition: color 0.3s ease, opacity 1s ease;
+}
+
+.todo-app__item-delete-button svg {
+    transition: stroke 1s ease;
+}
+
+/* =# -------------------- #= */
 
 /* =# Decorations #= */
 
@@ -408,23 +460,7 @@ body {
 }
 
 /* ==# Creating a floating card look for notes #== */
-.todo-app__item:nth-child(4n + 1) {
-    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
-}
-
-.todo-app__item:nth-child(4n + 2) {
-    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
-}
-
-.todo-app__item:nth-child(4n + 3) {
-    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
-}
-
-.todo-app__item:nth-child(4n + 4) {
-    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
-}
-
-.todo-app__item:nth-child(4n + 5) {
+.todo-app__item {
     box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -454,9 +490,6 @@ body {
 /* =# Animations #= */
 
 /* ==# Changing clicked input-area's highlight color #== */
-.todo-app__input-area {
-    transition: all 0.4s ease-in-out;
-}
 
 .todo-app__input-area:focus {
     outline: none; /* Hapus outline default yang kurang menarik */
@@ -467,7 +500,6 @@ body {
 /* ==# Hovering FX for submit button #== */
 .todo-app__submit-btn {
     cursor: pointer;
-    transition: all 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .todo-app__submit-btn:hover {
@@ -480,6 +512,18 @@ body {
     outline: none;
     transform: translateY(-4px); /* Slight lift effect */
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075);
+}
+
+/* ==# Completed/Uncompleted state smooth transition #== */
+[data-completed="true"] .todo-app__item-title,
+[data-completed="true"] .todo-app__item-details {
+    color: var(--color-text-secondary);
+    text-decoration: line-through;
+}
+
+.todo-app__item[data-completed="true"] {
+    filter: grayscale(50%) opacity(70%);
+    transform: scale(0.95);
 }
 
 /* =# ---------- #= */
