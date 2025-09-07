@@ -1,6 +1,10 @@
 console.log('Script loaded');
 
-// =# STATE & GLOBAL VARIABLES #=
+// =# 01.] STATE & GLOBAL VARIABLES #=
+
+/* 01.1] Create a set (array) of dummy objects to be shown on the site. 
+        -> This array holds the entire state of the application
+        -> The UI is a direct reflection of this array. */
 
 let todos = [
     {
@@ -26,18 +30,32 @@ let todos = [
     },
 ];
 
+// 01.1] ---------------------------------------------------
+
 // =# ------------------------ #-
 
-// =# DOM ELEMENT SELECTORS #=
+// =# 02.] DOM ELEMENT SELECTORS #=
+
+/* 02.1] Cache the frequently used DOM elements for.
+        -> This cache brings better performance and maintainability
+        -> We select those DOM elements once here to avoid repeated queries in our function*/
 
 const formElement = document.querySelector('#add-todo-form');
 const inputTitleElement = document.querySelector('#input-task-title');
 const inputDetailsElement = document.querySelector('#input-task-details');
 const todoListElement = document.querySelector('#todo-list');
 
+// 02.1] -----------------------------------------------------------------------
+
 // =# --------------------- #-
 
-// =# FUNCTIONS #=
+// =# 03.] FUNCTIONS #=
+
+/* 03.1] The "Painter" or "Renderer" Function
+        -> Generates the HTML for the entire todo list based on the 'todos' array.
+        -> It completely replaces the existing list in the DOM with the new version.
+        -> This function is called whenever a todo is added or deleted
+*/
 
 const renderTodos = () => {
     let todosHTML = '';
@@ -46,7 +64,8 @@ const renderTodos = () => {
         (todo) => { 
             todosHTML += `
                 <li 
-                    class="todo-app__item ${ todo.completed ? 'todo-completed' : '' }"
+                    class="todo-app__item"
+                    data-completed="${ todo.completed }"
                     data-id="${ todo.id }">
 
                     <!-- div 1 ~ Row 1 Column 1 : Main Content - Note Header -->
@@ -56,7 +75,7 @@ const renderTodos = () => {
                             <span class="underline bold">Date created:</span> <br> <span class="italic">${ todo.date_created }</spam>
                         </div>
                             
-                        <h4 class="todo-app__item-title ${ todo.completed ? 'todo-completed' : '' }">
+                        <h4 class="todo-app__item-title">
                             ${ todo.title }
                         </h4>
                     </div>
@@ -79,7 +98,7 @@ const renderTodos = () => {
                     <!-- div 3 ~ Row 2 Column 2 : Main Content - Note Body -->
 
                     <div class="todo-app__item-column-content-body">
-                        <p class="todo-app__item-details ${ todo.completed ? 'todo-completed' : '' }">${
+                        <p class="todo-app__item-details">${
                             todo.details 
                         }</p>
                     </div>
@@ -111,6 +130,14 @@ const renderTodos = () => {
     todoListElement.innerHTML = todosHTML;
 }
 
+/* 03.1] ------------------------------------ */ 
+
+/* 03.2] The Immutable-"Deleter" Function
+        -> Removes a specific todo item from the state.
+        -> It creates a new 'todos' array, filtering out the item to be deleted.
+        -> After updating the state, it calls renderTodos() to update the UI.
+*/
+
 const deleteTodo = (id) => {
     // 1.) Show confirmation dialogue and save the confirmation result
     const isConfirmed = window.confirm("Are you sure you want to delete this task?");
@@ -129,6 +156,15 @@ const deleteTodo = (id) => {
     }
 }
 
+/* 03.2] -------------------------------------- */
+
+/* 03.3] The Immutable-"Toggler" Function
+        -> Toggles the 'completed' status of a specific todo item.
+        -> It creates a new 'todos' array using .map(), returning a new object for the
+            item that was changed, and the original objects for all others.
+        -> Note: This function ONLY updates the data state, not the DOM
+*/
+
 const toggleCompleteTodo = (id) => {
     todos = todos.map(
         (todo_item) => {
@@ -144,13 +180,19 @@ const toggleCompleteTodo = (id) => {
             }
         }
     );
-
-    renderTodos();
 }
+
+/* -------------------------------------- */
 
 // =# --------- #=
 
-// =# EVENT LISTENERS #=
+// =# 04.] EVENT LISTENERS #=
+
+/* 04.1] Listener for the "Add New Task" form
+        -> Handles the 'submit' event.
+        -> Prevents default page reload, validates input, creates a new todo object,
+            pushes it to the 'todos' state, and then re-renders the list.
+*/
 
 formElement.addEventListener(
     'submit',
@@ -199,6 +241,15 @@ formElement.addEventListener(
     }
 );
 
+/* 04.1] ------------------------------------------ */
+
+/* 04.2] Listener for "click(s)" within the entire todo list
+        -> It's an `Event Delegation`
+        -> Uses event delegation to handle clicks on dynamically created todo items.
+        -> Determines if the click was on a "Toggle Complete" checkbox or a "Delete" button,
+            and calls the appropriate function.
+*/
+
 todoListElement.addEventListener(
     'click',
     (event) => {
@@ -217,7 +268,12 @@ todoListElement.addEventListener(
 
         // Check if "Toggle Complete" is clicked
         if (target.classList.contains('todo-app__item-complete-checkbox')) {
+            // Data Update through .map() to change completed status
             toggleCompleteTodo(todoId);
+
+            // Re-render the updated todos
+            const currentTodo = todos.find(todo => todo.id === Number(todoId));
+            parentListItem.dataset.completed = currentTodo.completed;
         }
 
         // Check if "Delete Button" is clicked
@@ -229,11 +285,20 @@ todoListElement.addEventListener(
     }
 );
 
+/* 04.3] ---------------------------------------------------------*/
+
 // =# --------------- #=
 
 
-// =# INITIALIZATION #=
+// =# 05.] INITIALIZATION #=
+
+/* 05.1] Initial data render
+        > Calls renderTodos() once when the script first loads to paint the
+            initial state of the todo list onto the page.
+*/ 
 
 renderTodos();
+
+/* 05.1] ------------------- */
 
 // =# -------------- #=
