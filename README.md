@@ -53,6 +53,10 @@ So here are my plans for this learning project... <br>
 
     * _Refactoring the item layout using `grid-template-areas` for better visual hierarchy._
 
+* ☑ **`CSS`** | <u> Smoother animations transition </u>
+
+    * _Every click and state change, like completing a task, now feels fluid and satisfying thanks to fine-tuned CSS transitions and effects._
+
 <br>
 
 * ☑ **`JS`** | <u> Using a structured data list as the Web-App's brain. </u>
@@ -277,7 +281,36 @@ _*** TBA_
 <br>
 <img src="images/documentations/webapp-screenshot-09.JPG" alt="Web App Screenshot 09" width="850">
 
+<br><br>
+<div align=center>- - - - -</div>
+<br><br>
+
+### Project Progress Session 05 - The Finishing Touches!
+📅 _**Date:** 2025, Sept. 07<sup>nd</sup>_
+
 <br>
+
+💬 This is the "polishing" update that officially completes Phase 1 of **MyoNote**. Today's focus was on refining the entire user experience as much as I could, squashing subtle bugs, and elevating the prototype to be more "functional". I've carefully reviewed every interaction to ensure the app not only works perfectly but also feels great to use. With this, the core client-side prototype is now ready to be showcased and get some feedbacks for improvement.
+
+<br>
+
+* 📍 **UX Improvement: Smooth State Transitions**
+
+    * Marking a task as complete is no longer an instant, jarring change. The entire task card now gracefully fades and shrinks, providing a more satisfying visual feedback.
+
+    * _Behind the Scenes:_ <br>
+    Instead of re-rendering the whole list, the app now intelligently updates only the clicked task's `data-attribute`, allowing performant `CSS filter` and `CSS transform` properties to handle the animation.
+
+* **Developer Part: Codebase Cleanup**
+    
+    *  **Code Cleanup**: <br>
+    The entire `HTML` , `CSS` , and `JavaScript` have been reviewed and added descriptive comments, explaining the "why" behind almost everything inside the code logic path.
+
+<br>
+
+### Web-App Visual in Progress Session 05 📸
+
+<img src="images/documentations/webapp-screenshot-10.JPG" alt="Web App Screenshot 10" width="850">
 
 ---
 
@@ -444,12 +477,42 @@ _*** TBA_
 
     * Utilized `grid-template-columns` with `auto` and `fr` units to create a flexible and powerful column structure where some columns fit their content ( `auto` ) while others expand to fill the available space ( `1fr` ).
 
+<br><br>
+<div align=center>- - - - -</div>
+<br><br>
+
+### Learning Module Session 05 ~ Refactoring, & Polishing
+
+</br>
+
+📚 Here are some key points I learned through this session:
+
+* 🔸 **Advanced State-Driven Styling with Data Attributes**
+
+    * Learned a modern and robust technique for styling elements based on their data state. Instead of toggling `CSS` classes on multiple child elements, I learned to update a single data-attribute on the parent `<li>` element.
+
+    * Utilized **`CSS Attribute Selectors`** (e.g., `[data-completed="true"]`) to apply styles from the parent down to its children. This approach is cleaner, more centralized, and less prone to `CSS specificity` issues.
+
 <br>
+
+* 🔸 **Optimizing UI Updates: Direct DOM Manipulation vs. Full Re-render**
+
+    * Understood the critical performance difference between re-rendering the entire list (`.innerHTML = ...`) versus making targeted updates to existing `DOM` elements.
+
+    * Successfully refactored the toggle functionality to only update the data-attribute of the specific `<li>` that was clicked. This prevents the entire list from being destroyed and recreated, which is essential for enabling smooth `CSS transitions` and improving application performance.
+
+<br>
+
+* 🔸 **Performant CSS Animations with filter and transform**
+
+    * Learned that for animations, properties like `filter` and `transform` are often superior to properties like opacity or background-color because they are typically hardware-accelerated (GPU), resulting in smoother and more efficient animations.
+
+    * Implemented a multi-layered visual feedback for completed tasks using a combination of `transform: scale()` and `filter: grayscale() opacity()`, creating a polished and professional user experience.
 
 ---
 
 <div align=right>
 
-**_Updated on : 2025, Sept. 4<sup>th</sup>_**
+**_Updated on : 2025, Sept. 08<sup>th</sup>_**
 
 </div>
